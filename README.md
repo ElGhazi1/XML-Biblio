@@ -32,7 +32,7 @@ sudo apt install libxml2-utils
 bibliotheque/
 ├── data/
 │   ├── livres.xml
-│   ├── livres.dtd
+│   ├── livre.dtd
 │   ├── livres.xsd
 ├── styles/
 │   └── livres.xsl
@@ -88,7 +88,7 @@ Assurez-vous que vos fichiers XML sont correctement structurés et valident en u
 
 ### Validation avec DTD
 ```
-xmllint --noout --dtdvalid data/livres.dtd data/livres.xml
+xmllint --noout --dtdvalid data/livre.dtd data/livres.xml
 ```
 ### Validation avec XSD
 ```
