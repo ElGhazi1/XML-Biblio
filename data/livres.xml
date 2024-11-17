@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE biblio SYSTEM "livre.dtd">
+<?xml-stylesheet type="text/xsl" href="../styles/livres.xsl"?>
+<!DOCTYPE biblio SYSTEM "livre.xsd">
 <biblio>
 
     <livre>
@@ -7,7 +8,7 @@
         <auteur>Antoine de Saint-Exupéry</auteur>
         <annee>1943</annee>
         <genre>Fiction</genre>
-        <prix devise="EUR">15.99</prix>
+        <prix devise="EUR">16.99</prix>
     </livre>
 
     <livre>

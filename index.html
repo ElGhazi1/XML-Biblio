@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Livres</title>
+</head>
+<body>
+    <h1>Catalogue des Livres</h1>
+    <div id="content">
+        <!-- Contenu des livres sera affiché ici -->
+    </div>
+
+    <script>
+        // Fonction pour charger un fichier XML ou XSL
+        function loadXML(url) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', url, true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            resolve(xhr.responseXML);
+                        } else {
+                            reject(`Erreur de chargement: ${xhr.status}`);
+                        }
+                    }
+                };
+                xhr.send();
+            });
+        }
+
+        // Fonction principale pour appliquer la transformation XSLT
+        async function transformXML() {
+            try {
+                // Charger le fichier XML et XSL
+                const xml = await loadXML('data/livres.xml');
+                const xsl = await loadXML('styles/livres.xsl');
+
+                // Créer un processeur XSLT
+                const xsltProcessor = new XSLTProcessor();
+                xsltProcessor.importStylesheet(xsl);
+
+                // Appliquer la transformation XSLT
+                const resultDocument = xsltProcessor.transformToDocument(xml);
+
+                // Convertir le résultat en HTML et l'ajouter à la page
+                const serializer = new XMLSerializer();
+                const htmlContent = serializer.serializeToString(resultDocument);
+                document.getElementById('content').innerHTML = htmlContent;
+            } catch (error) {
+                console.error('Erreur:', error);
+            }
+        }
+
+        // Lancer la transformation au chargement de la page
+        window.onload = transformXML;
+    </script>
+</body>
+</html>
