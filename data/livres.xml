@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblio SYSTEM "livre.dtd">
+<biblio>
+
+    <livre>
+        <titre>Livre 1</titre>
+        <auteur>Antoine de Saint-Exupéry</auteur>
+        <annee>1943</annee>
+        <genre>Fiction</genre>
+        <prix devise="EUR">15.99</prix>
+    </livre>
+
+    <livre>
+        <titre>Livre 2</titre>
+        <auteur>George Orwell</auteur>
+        <annee>2002</annee>
+        <genre>Science Fiction</genre>
+        <prix devise="USD">12.99</prix>
+    </livre>
+    
+    <livre>
+        <titre>Livre 3</titre>
+        <auteur>George Orwell</auteur>
+        <annee>2005</annee>
+        <genre>Drama</genre>
+        <prix devise="MAD">17.99</prix>
+    </livre>
+
+</biblio>

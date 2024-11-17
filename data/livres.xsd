@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="biblio">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="livre" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="titre"  type="xs:string"/>
+                        <xs:element name="auteur" type="xs:string"/>
+                        <xs:element name="annee"  type="xs:int"/>
+                        <xs:element name="genre"  type="xs:string"/>
+                        <xs:element name="prix">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:decimal">
+                                        <xs:attribute name="devise" type="xs:string" use="required"/>                
+                                    </xs:extension> 
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    </xs:element>
+</xs:schema>
